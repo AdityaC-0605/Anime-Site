@@ -1,0 +1,151 @@
+* { margin: 0; }
+body{
+    margin: 0px;
+    padding: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+
+}
+ .banner{
+    width:auto;
+    height:auto;
+    background-image:url(https://t4.ftcdn.net/jpg/03/21/60/71/360_F_321607144_e0dnqrWJYkg8HNSfehxTFwFGJpKvalu5.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    background-color: #333;
+    
+}
+ .tezt{
+    width:auto;
+    height:auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:white;
+    
+    }
+.tezt1{
+    width: auto;
+    height: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: navajowhite;
+    font-size: 200%;
+}
+
+.navbar{
+    background-image: url(https://jovelon.files.wordpress.com/2014/02/tumblr_n0bwlwivnr1qeodauo1_500.gif);
+    background-color: black;
+    overflow: hidden;
+    position:sticky;
+    bottom: 0;
+    width: 100%;
+
+}
+.navbar a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: wavy;
+    font-size: 17px;
+}
+
+.navbar a:hover{
+    background-color: brown;
+    color: black;
+
+}
+.men{
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.images {
+    align-content: normal;
+}
+.bg2{
+  align-content: normal;
+}
+.images img {
+    width  : 270px;
+    height : 350px;
+    margin : 10px;
+    opacity: 0.96;
+    
+}
+.img1 {
+    align-content: normal;
+}
+.img1 img {
+    width  : 250px;
+    
+    margin : 10px;
+    opacity: 0.85;
+}
+.navbar .search-container {
+    float: right;
+  }
+  
+  .navbar input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  
+  .navbar .search-container button {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar .search-container button:hover {
+    background: #ccc;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .navbar .search-container {
+      float: none;
+    }
+    .navbar a, .navbar input[type=text], .navbar .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .navbar input[type=text] {
+      border: 1px solid #ccc;  
+    }
+  }
+  .bg1{
+    width: auto;
+    height:auto;
+    background-image: url(desuga.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+  }
+  .ig{
+    width: fit-content;
+    height: fit-content;
+  }
+  .banah{
+    width:100vw;
+    height:100vh;
+    background-image: url(https://media.tenor.com/RX7bgMtjMG4AAAAd/wallpaper.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }

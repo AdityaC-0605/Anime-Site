@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Brand Tracing</title>
+  </head>
+  <body>
+    
+    <style>
+      .banner{
+    width: auto;
+    height: auto;
+    background-image:url(tr.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    background-color: #333;
+      }
+      
+    
+    </style>
+
+
+    
+    <div class="banner">
+      <h1 class="tezt">Brand Tracing Process Tool</h1>
+    <script>
+      // Assume a list of trusted brands with their safety status and their categories
+      var brandName = prompt("Enter The brand Name of The product");
+      const brandData = {
+        "Pringles": {
+          isTrusted: true,
+          category: "Snacks"
+        },
+        "Lays": {
+          isTrusted: true,
+          category: "Snacks"
+        },
+        "Pepsi": {
+          isTrusted: true,
+          category: "Soft Drinks"
+        },
+        "RedBull": {
+          isTrusted: false,
+          category: "Soft Drinks"
+        },
+        // Add more trusted brands with their safety status and categories
+      };
+
+      // Function to check the safety status of a brand and categorize food
+      function checkSafetyAndCategorize(brandName) {
+        // Check if the brand exists in the data
+        if (brandData[brandName].isTrusted) {
+          // Check safety status
+          let safetyStatusMsg = brandData[brandName].isTrusted
+          if(safetyStatusMsg){
+
+          
+            document.writeln("is a trusted brand. The product is safe to use.");
+          }
+        
+          // Categorize food based on brand
+          let foodCategory;
+          switch (brandData[brandName].category) {
+            case "Soft Drinks":
+              foodCategory = "Category X"; // Define the category for Soft Drinks
+              break;
+            case "Snacks":
+              foodCategory = "Category Y"; // Define the category for Snacks
+              break;
+            // Add more cases for other categories
+            default:
+              foodCategory = "Uncategorized"; // If category is not recognized
+          }
+
+          return {
+            safetyStatus: safetyStatusMsg,
+            foodCategory: foodCategory
+          };
+        } else {
+          // Brand not found in the data
+          return {
+            safetyStatus: "Brand not found.",
+            foodCategory: "Uncategorized"
+          };
+        }
+      }
+
+      // Example usage:
+      const userInputBrand = brandName; // Replace this with user input or product data
+      const brandInfo = checkSafetyAndCategorize(userInputBrand);
+      console.log(brandInfo.safetyStatus); // Output the safety status
+      console.log(brandInfo.foodCategory); // Output the food category information
+    </script>
+    </div>
+    
+  </body>
+</html>

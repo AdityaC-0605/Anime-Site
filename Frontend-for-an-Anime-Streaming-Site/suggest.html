@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimal Temperature Range</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #container {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Optimal Temperature Range</h1>
+    <p>Food Category: <span id="foodCategory"></span></p>
+    <p>Temperature: <span id="temperature"></span>°C</p>
+    <p>Storage Status: <span id="storageStatus"></span></p>
+    <p>Suggestion: <span id="suggestion"></span></p>
+    <button onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+    // Fetching parameters from the URL
+    const params = new URLSearchParams(window.location.search);
+    const foodCategory = params.get('category');
+    const temperature = params.get('temperature');
+
+    // Displaying parameters in the result page
+    document.getElementById('foodCategory').innerText = foodCategory;
+    document.getElementById('temperature').innerText = temperature;
+
+    // Adding logic to determine the suggestion and storage status based on the data (you can modify this as needed)
+    let suggestion = getOptimalTemperatureRange(foodCategory);
+    document.getElementById('suggestion').innerText = suggestion;
+
+    let storageStatus = checkStorageStatus(temperature, suggestion);
+    document.getElementById('storageStatus').innerText = storageStatus;
+
+    function goBack() {
+      // Redirect back to the input page
+      window.location.href = 'main_dash.html';
+    }
+
+    function getOptimalTemperatureRange(category) {
+      // Add your logic to determine the optimal temperature range for each category
+      // For simplicity, using static values here
+      switch (category) {
+        case 'Dry Foods':
+          return 'Store in a cool, dry place; temperature range: -18°C to 25°C';
+        case 'Refrigerated Products':
+          return 'Keep refrigerated; temperature range: 2°C to 7°C';
+        case 'Dairy Products':
+          return 'Keep refrigerated; temperature range: 2°C to 5°C';
+        case 'Produce':
+          return 'Store in a cool, dry place; temperature range: 10°C to 15°C';
+        case 'Fresh Meat':
+          return 'Keep refrigerated; temperature range: 0°C to 4°C';
+        case 'Seafood':
+          return 'Keep refrigerated; temperature range: -1°C to 2°C';
+        case 'Poultry':
+          return 'Keep refrigerated; temperature range: 0°C to 4°C';
+        case 'Frozen Foods':
+          return 'Store in the freezer; temperature range: -18°C to -15°C';
+        default:
+          return 'Not available';
+      }
+    }
+
+    function checkStorageStatus(actualTemperature, suggestedRange) {
+      // Extracting suggested temperature range values
+      const match = suggestedRange.match(/(-?\d+)°C to (-?\d+)°C/);
+      if (!match) {
+        return 'Storage status not available';
+      }
+
+      const minRange = parseInt(match[1]);
+      const maxRange = parseInt(match[2]);
+      const actualTemp = parseInt(actualTemperature);
+
+      // Checking if the actual temperature is within the suggested range
+      if (actualTemp >= minRange && actualTemp <= maxRange) {
+        return 'Stored in optimal conditions';
+      } else {
+        return 'Not stored in optimal conditions';
+      }
+    }
+  </script>
+</body>
+</html>
